@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --gold: #d6a84f;
+    --dark: #11151b;
+    --muted: #69717d;
+    --cream: #f8f6f1
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #17191d;
+    overflow-x: hidden
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif
+}
+
+.navbar {
+    padding: 18px 0;
+    background: rgba(10, 13, 18, .55);
+    backdrop-filter: blur(12px);
+    transition: .3s
+}
+
+.navbar-brand {
+    font-size: 1.35rem
+}
+
+.navbar-brand span:last-child {
+    color: var(--gold)
+}
+
+.brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 50%;
+    font-family: serif;
+    margin-right: 5px
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, .82) !important;
+    margin: 0 7px
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff !important
+}
+
+.btn-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #17120a;
+    font-weight: 700
+}
+
+.btn-gold:hover {
+    background: #e3b965;
+    border-color: #e3b965;
+    color: #17120a
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    background: linear-gradient(90deg, rgba(7, 10, 15, .88), rgba(7, 10, 15, .35), rgba(7, 10, 15, .15)), url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=2000&q=85') center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(7, 10, 15, .88), rgba(7, 10, 15, .35), rgba(7, 10, 15, .15)),
+        url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=2000&q=85') center/cover;
+    animation: heroTransformY 5s ease-in-out infinite;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes heroTransformY {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(3.4rem, 7vw, 6.8rem);
+    line-height: .95;
+    margin: 18px 0
+}
+
+.hero h1 span {
+    color: var(--gold)
+}
+
+.hero p {
+    max-width: 650px;
+    color: rgba(255, 255, 255, .82)
+}
+
+.eyebrow {
+    font-size: .76rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--gold)
+}
+
+.eyebrow.dark {
+    color: #9b7024
+}
+
+.section-padding {
+    padding: 100px 0
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px
+}
+
+.section-heading h2,
+.section-padding>.container>.row h2 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    margin: 12px 0
+}
+
+.section-heading p {
+    color: var(--muted)
+}
+
+.experience-card {
+    height: 390px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    padding: 32px;
+    display: flex;
+    align-items: end;
+    background-size: cover;
+    background-position: center;
+    transition: .4s
+}
+
+.experience-card:hover {
+    transform: translateY(-8px)
+}
+
+.experience-card:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 20%, rgba(0, 0, 0, .9))
+}
+
+.experience-card>div {
+    position: relative;
+    z-index: 1
+}
+
+.experience-card i {
+    font-size: 2rem;
+    color: var(--gold)
+}
+
+.experience-card h3 {
+    font-size: 2rem
+}
+
+.experience-card p {
+    color: #ddd
+}
+
+.experience-history {
+    background-image: url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1000&q=80')
+}
+
+.experience-beach {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80')
+}
+
+.experience-adventure {
+    background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80')
+}
+
+.mini-feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e8e5de;
+    border-radius: 12px
+}
+
+.mini-feature i {
+    font-size: 1.4rem;
+    color: var(--gold)
+}
+
+.mini-feature strong,
+.mini-feature small {
+    display: block
+}
+
+.mini-feature small {
+    color: var(--muted)
+}
+
+.quote-card {
+    min-height: 360px;
+    padding: 55px;
+    background: var(--dark);
+    color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: var(--gold)
+}
+
+.quote-card p {
+    font: 600 2rem/1.4 'Playfair Display', serif
+}
+
+.quote-card span {
+    color: #bbb
+}
+
+.stats-section {
+    background: var(--gold);
+    padding: 55px 0
+}
+
+.stats-section strong,
+.stats-section span {
+    display: block
+}
+
+.stats-section strong {
+    font: 700 2.7rem 'Playfair Display'
+}
+
+.stats-section span {
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.footer {
+    background: #0e1115;
+    color: #aeb3ba;
+    padding: 65px 0 25px
+}
+
+.footer h4 {
+    color: #fff
+}
+
+.footer h6 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.footer a {
+    display: block;
+    color: #aeb3ba;
+    text-decoration: none;
+    margin: 8px 0
+}
+
+.footer a:hover {
+    color: var(--gold)
+}
+
+.socials {
+    display: flex;
+    gap: 10px
+}
+
+.socials a {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 1.1rem
+}
+
+
+/* هنا بدايه الexplore.html  */
+
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #17191d;
+    overflow-x: hidden
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif
+}
+
+
+.navbar {
+    padding: 18px 0;
+    background: rgba(10, 13, 18, .55);
+    backdrop-filter: blur(12px);
+    transition: .3s
+}
+
+.navbar-brand {
+    font-size: 1.35rem
+}
+
+.navbar-brand span:last-child {
+    color: var(--gold)
+}
+
+.brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 50%;
+    font-family: serif;
+    margin-right: 5px
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, .82) !important;
+    margin: 0 7px
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff !important
+}
+
+.btn-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #17120a;
+    font-weight: 700
+}
+
+.btn-gold:hover {
+    background: #e3b965;
+    border-color: #e3b965;
+    color: #17120a
+}
+
+
+.page-hero {
+    padding: 170px 0 100px;
+    background: linear-gradient(90deg, rgba(8, 11, 15, .82), rgba(8, 11, 15, .35)), url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=2000&q=85') center/cover;
+    color: white
+}
+
+.page-hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin: 15px 0
+}
+
+.page-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #ddd
+}
+
+.eyebrow {
+    font-size: .76rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--gold)
+}
+
+
+.section-padding {
+    padding: 100px 0
+}
+
+
+.filter-bar .btn {
+    margin: 4px;
+    border-radius: 50px;
+    padding: 10px 24px
+}
+
+
+.destination-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
+    height: 100%;
+    transition: .3s
+}
+
+.destination-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .12)
+}
+
+.dest-img {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    position: relative
+}
+
+.dest-img .badge {
+    position: absolute;
+    left: 20px;
+    top: 20px
+}
+
+.bg-gold {
+    background: var(--gold) !important;
+    color: #17120a
+}
+
+.cairo {
+    background-image: url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=900&q=80')
+}
+
+.luxor {
+    background-image: url('https://images.unsplash.com/photo-1587975844577-56dfe5d3fca8?auto=format&fit=crop&w=1200&q=80');
+}
+
+.aswan {
+    background-image: url('https://images.unsplash.com/photo-1655755001673-0d6ef8b25496?auto=format&fit=crop&w=1200&q=80');
+}
+
+.hurghada {
+    background-image: url('https://images.unsplash.com/photo-1651247515420-2625b7724546?auto=format&fit=crop&w=1200&q=80');
+}
+
+.sharm {
+    background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80')
+}
+
+.siwa {
+    background-image: url('https://images.unsplash.com/photo-1652377170273-72152e714b96?auto=format&fit=crop&w=1200&q=80');
+}
+
+.destination-card h3 {
+    font-size: 1.8rem
+}
+
+.destination-card p {
+    color: var(--muted)
+}
+
+.destination-card a {
+    color: #9b7024;
+    text-decoration: none;
+    font-weight: 700
+}
+
+
+.footer {
+    background: #0e1115;
+    color: #aeb3ba;
+    padding: 65px 0 25px
+}
+
+.footer h4 {
+    color: #ffffff
+}
+
+
+@media(max-width:767px) {
+    .section-padding {
+        padding: 70px 0
+    }
+
+    .navbar {
+        background: rgba(10, 13, 18, .9)
+    }
+}
+
+/* هنا بدايه الGallery.html  */
+
+.gallery-hero {
+    background-color: #11151b;
+    color: white;
+    padding: 140px 0 60px;
+    text-align: center;
+}
+
+.gallery-hero h1 {
+    color: #d6a84f;
+    font-size: 45px;
+}
+
+.gallery-hero p {
+    font-size: 18px;
+}
+
+.gallery-section {
+    background-color: #f8f6f1;
+    padding: 50px 0;
+}
+
+.gallery-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    animation: floatCard 3s ease-in-out infinite;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-card:active {
+    transform: scale(0.97) translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.12s ease-out,
+        box-shadow 0.12s ease-out;
+}
+
+@keyframes floatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.row>div:nth-child(2n) .gallery-card {
+    animation-delay: 0.5s;
+}
+
+.row>div:nth-child(3n) .gallery-card {
+    animation-delay: 1s;
+}
+
+.row>div:nth-child(4n) .gallery-card {
+    animation-delay: 1.5s;
+}
+
+.gallery-img-wrapper {
+    position: relative;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.badge-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #d6a84f;
+    color: #11151b;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.badge-category i {
+    font-size: 13px;
+}
+
+.gallery-info {
+    text-align: center;
+    padding: 15px;
+}
+
+.gallery-info h3 {
+    color: #d6a84f;
+    margin-bottom: 10px;
+}
+
+.gallery-info p {
+    color: #555;
+    font-size: 15px;
+}
+
+.gallery-info span {
+    color: #11151b;
+    font-weight: bold;
+}
+
+.quote-card {
+    background-color: #11151b;
+    border-radius: 10px;
+    height: 100%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    animation: floatCard 3s ease-in-out infinite;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quote-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(214, 168, 79, 0.3);
+}
+
+.quote-card:active {
+    transform: scale(0.97) translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.12s ease-out,
+        box-shadow 0.12s ease-out;
+}
